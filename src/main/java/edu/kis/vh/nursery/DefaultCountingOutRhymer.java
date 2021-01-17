@@ -8,6 +8,10 @@ public class DefaultCountingOutRhymer {
 		return total;
 	}
 
+	public int[] getNumbers() {
+		return numbers;
+	}
+
 	public int total = -1;
 
 	protected void countIn(int in) {
