@@ -6,7 +6,7 @@ public class DefaultCountingOutRhymer {
 	private final int[] numbers = new int[CAPACITY];
 	public int total = -1;
 
-	public void countIn(int in) {
+	protected void countIn(int in) {
 		if (!isFull())
 			numbers[++total] = in;
 	}
