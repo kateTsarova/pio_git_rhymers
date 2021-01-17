@@ -1,5 +1,22 @@
 package edu.kis.vh.nursery.list;
 
+final class Node {
+	private int value;
+	public Node prev, next;
+
+	public Node(int i) {
+		setValue(i);
+	}
+
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
+}
+
 public class IntLinkedList {
 
 	Node last;
