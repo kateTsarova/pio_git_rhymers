@@ -1,5 +1,5 @@
 package edu.kis.vh.nursery.list;
-
+/*
 final class Node {
 	private int value;
 	public Node prev, next;
@@ -16,6 +16,8 @@ final class Node {
 		this.value = value;
 	}
 }
+
+ */
 
 public class IntLinkedList {
 

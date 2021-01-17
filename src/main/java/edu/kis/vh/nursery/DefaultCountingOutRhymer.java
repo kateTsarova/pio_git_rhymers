@@ -4,17 +4,9 @@ package edu.kis.vh.nursery;
  * Rhymer, contains array with max size 11
  */
 public class DefaultCountingOutRhymer {
-
-	private int[] numbers = new int[12];
-
-	public int getTotal() {
-		return total;
-	}
-
-	public int[] getNumbers() {
-		return numbers;
-	}
-
+	final int CAPACITY = 12;
+	final int EMPTY = -1;
+	private final int[] numbers = new int[CAPACITY];
 	public int total = -1;
 
 	/**
@@ -31,7 +23,7 @@ public class DefaultCountingOutRhymer {
 	 * @return true if array is empty
 	 */
 	protected boolean callCheck() {
-		return total == -1;
+		return total == EMPTY;
 	}
 
 	/**
@@ -39,7 +31,7 @@ public class DefaultCountingOutRhymer {
 	 * @return true if tab is full
 	 */
 	protected boolean isFull() {
-		return total == 11;
+		return total == CAPACITY-1;
 	}
 
 	/**
@@ -61,5 +53,4 @@ public class DefaultCountingOutRhymer {
 			return -1;
 		return numbers[total--];
 	}
-
 }
