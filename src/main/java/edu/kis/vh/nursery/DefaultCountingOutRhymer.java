@@ -1,56 +1,39 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.container.IntArrayStack;
+import edu.kis.vh.nursery.container.IntContainer;
+
 /**
  * Rhymer, contains array with max size 11
  */
 public class DefaultCountingOutRhymer {
-	final int CAPACITY = 12;
-	final int EMPTY = -1;
-	private final int[] numbers = new int[CAPACITY];
-	public int total = -1;
-
-	/**
-	 * adds value to array numbers
-	 * @param in value to add
-	 */
-	protected void countIn(int in) {
-		if (!isFull())
-			numbers[++total] = in;
+	public DefaultCountingOutRhymer(IntContainer nums) {
+		this.nums = nums;
 	}
 
-	/**
-	 * checks if array is empty
-	 * @return true if array is empty
-	 */
-	protected boolean callCheck() {
-		return total == EMPTY;
+	public DefaultCountingOutRhymer() {
+		nums = new IntArrayStack();
 	}
 
-	/**
-	 * checks if array is full
-	 * @return true if tab is full
-	 */
-	protected boolean isFull() {
-		return total == CAPACITY-1;
+	public void countIn(int in) {
+		nums.countIn(in);
 	}
 
-	/**
-	 * returns last added value in array
-	 * @return last value in array
-	 */
-	protected int peekaboo() {
-		if (callCheck())
-			return -1;
-		return numbers[total];
+	public boolean callCheck() {
+		return nums.callCheck();
 	}
 
-	/**
-	 * return and delete last value in array
-	 * @return last value in array
-	 */
-	protected int countOut() {
-		if (callCheck())
-			return -1;
-		return numbers[total--];
+	public boolean isFull() {
+		return nums.isFull();
 	}
+
+	public int peekaboo() {
+		return nums.peekaboo();
+	}
+
+	public int countOut() {
+		return nums.countOut();
+	}
+
+	IntContainer nums;
 }

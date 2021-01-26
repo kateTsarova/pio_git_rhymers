@@ -1,8 +1,10 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.container.IntArrayStack;
+
 public class FIFORhymer extends DefaultCountingOutRhymer {
 
-	private DefaultCountingOutRhymer temp = new DefaultCountingOutRhymer();
+	private IntArrayStack temp = new IntArrayStack();
 	
 	@Override
 	public int countOut() {
@@ -17,7 +19,7 @@ public class FIFORhymer extends DefaultCountingOutRhymer {
 		return ret;
 	}
 
-	public DefaultCountingOutRhymer getTemp() {
+	public IntArrayStack getTemp() {
 		return temp;
 	}
 }
